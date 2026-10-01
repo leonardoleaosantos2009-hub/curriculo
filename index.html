@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonardo Leão dos Santos | Desenvolvedor de Sistemas Full-Stack</title>
+<meta name="description" content="Currículo online de Leonardo Leão dos Santos, Desenvolvedor de Sistemas Full-Stack em Botucatu, SP. HTML, CSS, JavaScript, SQL, C++ e Arduino.">
+<meta name="theme-color" content="#0f2027">
+<style>
+:root{--bg:#f5f8fa;--card:#fff;--text:#14212b;--muted:#5b6b78;--line:#e1e8ed;--accent:#0a8fb5;--accent2:#2c5364;--hero:linear-gradient(135deg,#0f2027,#2c5364 60%,#00a8cc)}
+:root[data-theme=dark]{--bg:#0b1419;--card:#121e26;--text:#e8f0f4;--muted:#93a4b0;--line:#22323c;--accent:#2fd0f5;--accent2:#7fb6cc}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text)}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:1040px;margin:auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;color:var(--text)}.logo span{color:var(--accent)}
+.links{display:flex;gap:22px;align-items:center}
+.links a{color:var(--muted);font-size:.95rem;font-weight:500}.links a:hover{color:var(--accent)}
+.icon-btn{background:none;border:1px solid var(--line);color:var(--text);border-radius:10px;width:38px;height:38px;cursor:pointer;font-size:1.05rem}
+#menu{display:none}
+.hero{background:var(--hero);color:#fff;padding:90px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.tag{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.14);padding:6px 14px;border-radius:99px;font-size:.85rem;font-weight:600}
+.dot{width:9px;height:9px;border-radius:50%;background:#3ee07a;box-shadow:0 0 0 4px rgba(62,224,122,.25)}
+h1{font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.1;margin:18px 0 10px}
+.role{font-size:1.2rem;opacity:.92;min-height:1.9em}
+.hero p.lead{opacity:.85;max-width:520px;margin:12px 0 26px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:12px;font-weight:700;border:2px solid transparent;cursor:pointer;font-size:.95rem;font-family:inherit}
+.btn.p{background:#fff;color:#0f2027}.btn.p:hover{transform:translateY(-2px)}
+.btn.s{border-color:rgba(255,255,255,.55);color:#fff;background:none}.btn.s:hover{background:rgba(255,255,255,.12)}
+.facts{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:22px;display:grid;gap:14px}
+.facts div{display:flex;justify-content:space-between;gap:12px;font-size:.92rem;border-bottom:1px solid rgba(255,255,255,.14);padding-bottom:10px}
+.facts div:last-child{border:0;padding:0}.facts b{opacity:.7;font-weight:600}.facts span{text-align:right;font-weight:600}
+section{padding:72px 0}
+section h2{font-size:1.9rem;margin-bottom:6px}
+section h2::after{content:"";display:block;width:48px;height:4px;border-radius:4px;background:var(--accent);margin-top:8px}
+.sub{color:var(--muted);margin:14px 0 30px;max-width:640px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.card h3{font-size:1.08rem;margin-bottom:8px}.card p{color:var(--muted);font-size:.94rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);border-radius:99px;padding:3px 12px;font-size:.78rem;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-top:30px}
+.stat{text-align:center;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.stat b{display:block;font-size:1.8rem;color:var(--accent)}.stat span{color:var(--muted);font-size:.85rem}
+.bar{margin-bottom:16px}.bar div{display:flex;justify-content:space-between;font-weight:600;font-size:.92rem;margin-bottom:6px}
+.bar i{display:block;height:8px;background:var(--line);border-radius:8px;overflow:hidden}
+.bar i b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:8px;transition:width 1.2s ease}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.tl{border-left:3px solid var(--line);padding-left:24px}
+.tl div{position:relative;margin-bottom:26px}
+.tl div::before{content:"";position:absolute;left:-33px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.tl small{color:var(--accent);font-weight:700}.tl h3{font-size:1.05rem}.tl p{color:var(--muted);font-size:.93rem}
+form{display:grid;gap:14px}
+input,textarea{width:100%;padding:13px 15px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit}
+input:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:40px}
+.contact .item{display:block;margin-bottom:14px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:14px;color:var(--text)}
+.contact .item small{display:block;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:var(--muted);font-size:.88rem}
+.reveal{opacity:0;transform:translateY(24px);transition:.7s}.reveal.on{opacity:1;transform:none}
+@media(max-width:800px){
+ .hero .wrap,.two,.contact{grid-template-columns:1fr}
+ #menu{display:block}
+ .links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;padding:18px;background:var(--bg);border-bottom:1px solid var(--line)}
+ .links.open{display:flex}
+}
+@media print{header,.btns,form,#menu,.icon-btn{display:none!important}
+ .hero{background:none;color:#000;padding:20px 0}.facts{border-color:#999;background:none}.reveal{opacity:1;transform:none}
+ section{padding:20px 0}.card,.stat{break-inside:avoid}.bar i b{width:var(--w)!important}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+ <a class="logo" href="#top">Leonardo<span>.dev</span></a>
+ <div class="links" id="links">
+  <a href="#sobre">Sobre</a><a href="#skills">Competências</a><a href="#projetos">Projetos</a><a href="#formacao">Formação</a><a href="#contato">Contato</a>
+  <button class="icon-btn" id="theme" aria-label="Alternar tema">🌙</button>
+ </div>
+ <button class="icon-btn" id="menu" aria-label="Abrir menu">☰</button>
+</nav></div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+ <div>
+  <span class="tag"><i class="dot"></i> Aberto a oportunidades</span>
+  <h1>Leonardo Leão dos Santos</h1>
+  <div class="role" id="role">Desenvolvedor de Sistemas</div>
+  <p class="lead">Desenvolvedor Full-Stack em formação, com foco em Front-End. Transformo conceitos em interfaces e projetos funcionais.</p>
+  <div class="btns">
+   <a class="btn p" href="#contato">Entrar em contato</a>
+   <button class="btn s" onclick="window.print()">⬇ Baixar currículo (PDF)</button>
+   <a class="btn s" href="https://github.com/leonardoleaosantos2009-hub" target="_blank" rel="noopener">GitHub</a>
+  </div>
+ </div>
+ <div class="facts">
+  <div><b>Local</b><span>Botucatu, SP</span></div>
+  <div><b>Formação</b><span>Téc. Desenv. de Sistemas, SENAI</span></div>
+  <div><b>Em curso</b><span>Machine Learning, SENAI</span></div>
+  <div><b>Busco</b><span>Estágio / Vaga júnior</span></div>
+  <div><b>Idiomas</b><span>Português · Inglês básico</span></div>
+ </div>
+</div></div>
+
+<section id="sobre"><div class="wrap reveal">
+ <h2>Sobre mim</h2>
+ <p class="sub">Desenvolvedor de Sistemas em formação, com foco em Front-End e conhecimentos em HTML, CSS e JavaScript. Tenho experiência prática em interfaces web, lógica de programação e fundamentos de Back-End, além de noções de informática, hardware e Machine Learning. Busco uma oportunidade para aplicar meus conhecimentos, desenvolver projetos reais e evoluir profissionalmente na área de tecnologia.</p>
+ <div class="stats">
+  <div class="stat"><b>4</b><span>Projetos pessoais</span></div>
+  <div class="stat"><b>7+</b><span>Tecnologias</span></div>
+  <div class="stat"><b>2</b><span>Cursos no SENAI</span></div>
+  <div class="stat"><b>100%</b><span>Vontade de aprender</span></div>
+ </div>
+</div></section>
+
+<section id="skills" style="background:var(--card)"><div class="wrap reveal">
+ <h2>Competências técnicas</h2>
+ <p class="sub">Tecnologias e conceitos com os quais já trabalhei nos meus estudos e projetos.</p>
+ <div class="two">
+  <div>
+   <div class="bar"><div><span>HTML5 e CSS3</span><span>Intermediário</span></div><i><b style="--w:75%" data-w="75"></b></i></div>
+   <div class="bar"><div><span>JavaScript</span><span>Básico/Intermediário</span></div><i><b style="--w:60%" data-w="60"></b></i></div>
+   <div class="bar"><div><span>SQL e Modelagem de Dados</span><span>Intermediário</span></div><i><b style="--w:65%" data-w="65"></b></i></div>
+   <div class="bar"><div><span>C++ / Arduino</span><span>Básico</span></div><i><b style="--w:50%" data-w="50"></b></i></div>
+   <div class="bar"><div><span>Machine Learning</span><span>Fundamentos</span></div><i><b style="--w:30%" data-w="30"></b></i></div>
+  </div>
+  <div class="grid" style="grid-template-columns:1fr">
+   <div class="card"><h3>🌐 Desenvolvimento Web</h3><p>Interfaces responsivas, estruturação semântica e estilização com CSS.</p></div>
+   <div class="card"><h3>🧠 Programação</h3><p>Lógica, funções, arrays e estruturas de controle. Fundamentos de Back-End.</p></div>
+   <div class="card"><h3>🧰 Ferramentas</h3><p>Git, GitHub, Pacote Office, hardware e configuração de computadores.</p></div>
+  </div>
+ </div>
+</div></section>
+
+<section id="projetos"><div class="wrap reveal">
+ <h2>Projetos</h2>
+ <p class="sub">Alguns dos projetos que desenvolvi durante meus estudos.</p>
+ <div class="grid">
+  <div class="card"><h3>🗄️ Modelagem de Banco de Dados</h3><p>Modelos relacionais e DER com entidades, atributos, chaves primárias e estrangeiras, usando DDL e DML.</p><div class="chips"><span class="chip">SQL</span><span class="chip">DDL</span><span class="chip">DML</span></div><p style="margin-top:14px"><a href="https://github.com/leonardoleaosantos2009-hub/DDL-DML-" target="_blank" rel="noopener">Ver no GitHub →</a></p></div>
+  <div class="card"><h3>🅿️ Sensor de Estacionamento</h3><p>Sensor ultrassônico com Arduino UNO que mede a distância de obstáculos, programado em C++.</p><div class="chips"><span class="chip">C++</span><span class="chip">Arduino</span></div><p style="margin-top:14px"><a href="https://github.com/leonardoleaosantos2009-hub/Sensor-de-Estacionamento-Ultrassonico-com-Arduino" target="_blank" rel="noopener">Ver no GitHub →</a></p></div>
+  <div class="card"><h3>🛒 Página de Vendas para Curso</h3><p>Página com seções, cards, botões e elementos de apresentação.</p><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span></div></div>
+  <div class="card"><h3>🖼️ Galeria de Projetos Web</h3><p>Interface de galeria com foco em organização e estilização de elementos.</p><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span></div></div>
+ </div>
+</div></section>
+
+<section id="formacao" style="background:var(--card)"><div class="wrap reveal">
+ <h2>Formação e cursos</h2><p class="sub"></p>
+ <div class="two">
+  <div class="tl">
+   <div><small>Fev/2026 – Dez/2027 · Em andamento</small><h3>Técnico em Desenvolvimento de Sistemas</h3><p>SENAI</p></div>
+   <div><small>Jul/2026 – Dez/2026 · Em andamento</small><h3>Aperfeiçoamento em Machine Learning</h3><p>SENAI</p></div>
+  </div>
+  <div class="card"><h3>🌎 Idiomas</h3><p>Português: nativo<br>Inglês: básico</p></div>
+ </div>
+</div></section>
+
+<section id="contato"><div class="wrap reveal">
+ <h2>Vamos conversar?</h2>
+ <p class="sub">Estou aberto a estágios, vagas júnior e projetos colaborativos. Envie uma mensagem.</p>
+ <div class="contact">
+  <div>
+   <a class="item" href="mailto:leonardoleaosantos2009@gmail.com"><small>E-mail</small>leonardoleaosantos2009@gmail.com</a>
+   <a class="item" href="https://github.com/leonardoleaosantos2009-hub" target="_blank" rel="noopener"><small>GitHub</small>github.com/leonardoleaosantos2009-hub</a>
+   <div class="item"><small>Localização</small>Botucatu, SP</div>
+  </div>
+  <form id="form">
+   <input id="n" placeholder="Seu nome" required>
+   <input id="e" type="email" placeholder="Seu e-mail" required>
+   <textarea id="m" rows="5" placeholder="Sua mensagem" required></textarea>
+   <button class="btn p" style="background:var(--accent);color:#fff" type="submit">Enviar mensagem</button>
+  </form>
+ </div>
+</div></section>
+</main>
+
+<footer>© <span id="y"></span> Leonardo Leão dos Santos · Desenvolvedor de Sistemas</footer>
+
+<script>
+const root=document.documentElement,tb=document.getElementById('theme');
+let t=null;try{t=localStorage.getItem('theme')}catch(e){}
+if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+function set(v){root.dataset.theme=v;tb.textContent=v==='dark'?'☀️':'🌙';try{localStorage.setItem('theme',v)}catch(e){}}
+set(t);tb.onclick=()=>set(root.dataset.theme==='dark'?'light':'dark');
+const L=document.getElementById('links');
+document.getElementById('menu').onclick=()=>L.classList.toggle('open');
+L.onclick=e=>{if(e.target.tagName==='A')L.classList.remove('open')};
+document.getElementById('y').textContent=new Date().getFullYear();
+const roles=['Desenvolvedor de Sistemas','Full-Stack | Foco em Front-End','HTML · CSS · JavaScript · SQL','Estudando Machine Learning'],r=document.getElementById('role');
+let i=0,c=0,d=false;
+(function tick(){const s=roles[i];c+=d?-1:1;r.textContent=s.slice(0,c)+'▌';let w=d?35:70;
+ if(!d&&c===s.length){d=true;w=1800}else if(d&&c===0){d=false;i=(i+1)%roles.length;w=400}setTimeout(tick,w)})();
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');
+ x.target.querySelectorAll('[data-w]').forEach(b=>b.style.width=b.dataset.w+'%');io.unobserve(x.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.getElementById('form').onsubmit=e=>{e.preventDefault();
+ const n=encodeURIComponent(document.getElementById('n').value),em=document.getElementById('e').value,m=document.getElementById('m').value;
+ location.href='mailto:leonardoleaosantos2009@gmail.com?subject='+encodeURIComponent('Contato pelo site - ')+n+'&body='+encodeURIComponent(m+'\n\nResponder para: '+em)};
+</script>
+</body>
+</html>
