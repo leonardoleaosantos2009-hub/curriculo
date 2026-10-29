@@ -86,9 +86,24 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:v
  .links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;padding:18px;background:var(--bg);border-bottom:1px solid var(--line)}
  .links.open{display:flex}
 }
-@media print{header,.btns,form,#menu,.icon-btn,.api,body::before{display:none!important}
- :root{--bg:#fff;--card:#fff;--text:#000;--muted:#333;--line:#ccc;--a:#055;--b:#505}
- h1{color:#000;background:none}.skill i b{width:var(--w)!important}section{padding:18px 0}.card{break-inside:avoid}}
+.cv{display:none}
+@media print{
+ @page{size:A4;margin:0}
+ html,body{background:#fff!important;color:#000!important}
+ body{font:10pt/1.4 Arial,Helvetica,sans-serif;overflow:visible}
+ body::before,header,main,footer{display:none!important}
+ .cv{display:block;color:#111;padding:14mm 16mm}
+ .cv-name{font:700 22pt Arial,Helvetica,sans-serif;color:#0b3a4a;line-height:1.1}
+ .cv-role{font-size:11.5pt;color:#333;margin:2pt 0 4pt}
+ .cv-contact{font-size:9pt;color:#333;padding-bottom:7pt;border-bottom:2px solid #0b3a4a}
+ .cv-h{font:700 10.5pt Arial,Helvetica,sans-serif;color:#0b3a4a;text-transform:uppercase;letter-spacing:.06em;margin:11pt 0 4pt;padding-bottom:2pt;border-bottom:1px solid #bbb}
+ .cv p{margin:0 0 3pt;font-size:10pt}
+ .cv ul{margin:0;padding-left:14pt}
+ .cv li{margin-bottom:3pt;font-size:9.8pt;break-inside:avoid}
+ .cv li span{display:block;color:#555;font-size:8.6pt;margin-top:1pt}
+ .cv .row{break-inside:avoid;margin-bottom:2pt}
+ .cv .row b{display:block;font-size:10pt}.cv .row i{display:block;color:#555;font-size:9pt;font-style:normal}
+}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 
 /* ---- visual futurista ---- */
@@ -249,6 +264,45 @@ h2::before{content:"> ";color:var(--a);text-shadow:0 0 12px var(--a)}
 </div></section>
 </main>
 
+<div class="cv" id="cv">
+ <div class="cv-name">Leonardo Leão dos Santos</div>
+ <div class="cv-role">Desenvolvedor de Sistemas | Full-Stack</div>
+ <div class="cv-contact"><div>Botucatu, SP &nbsp;·&nbsp; leonardoleaosantos2009@gmail.com</div><div>github.com/leonardoleaosantos2009-hub &nbsp;·&nbsp; leonardoleaosantos2009-hub.github.io/curriculo</div></div>
+ <!-- Para incluir telefone no PDF, adicione aqui: &nbsp;·&nbsp; (DD) 9XXXX-XXXX -->
+
+ <div class="cv-h">Resumo profissional</div>
+ <p>Desenvolvedor de Sistemas em formação, com foco em Full-Stack. Experiência prática em interfaces web, APIs REST com Node.js e Express, banco de dados MySQL e lógica de programação, além de conhecimentos em hardware e Machine Learning. Busco estágio ou vaga júnior para aplicar meus conhecimentos, desenvolver projetos reais e evoluir profissionalmente na área de tecnologia.</p>
+
+ <div class="cv-h">Competências técnicas</div>
+ <ul>
+  <li><b>Front-End:</b> HTML5, CSS3, JavaScript, Axios, interfaces responsivas</li>
+  <li><b>Back-End:</b> Node.js, Express, API REST (CRUD completo), soft delete, variáveis de ambiente (dotenv)</li>
+  <li><b>Banco de dados:</b> SQL, MySQL, Stored Procedures e Functions, modelagem relacional (DER)</li>
+  <li><b>Eletrônica:</b> Arduino UNO, sensores, C++</li>
+  <li><b>Outros:</b> Git e GitHub, Pacote Office, hardware e configuração, fundamentos de Machine Learning</li>
+ </ul>
+
+ <div class="cv-h">Projetos</div>
+ <ul>
+  <li><b>Sistema de Cadastro de Produtos</b> (Full-Stack): interface web com Axios e API REST em Node.js, Express e MySQL, com desativação lógica. <span>github.com/leonardoleaosantos2009-hub/cadastro_produto</span></li>
+  <li><b>Papyro, Gestão de Biblioteca:</b> banco MySQL com 4 tabelas relacionadas e API REST em rotas e controladores, com validação e bloqueio de ISBN duplicado. <span>github.com/leonardoleaosantos2009-hub/papyro-db</span></li>
+  <li><b>Estacionamento DB:</b> banco MySQL com Stored Procedures e Function que calcula a tarifa automaticamente. <span>github.com/leonardoleaosantos2009-hub/Estacionamento-DB</span></li>
+  <li><b>API REST de Supermercado:</b> CRUD de produtos em Node.js e Express, com validação e códigos HTTP corretos.</li>
+  <li><b>Modelagem de Banco de Dados:</b> modelos relacionais e DER com DDL e DML. <span>github.com/leonardoleaosantos2009-hub/DDL-DML-</span></li>
+  <li><b>Sensor de Estacionamento:</b> medição de distância com Arduino UNO, sensor ultrassônico e C++. <span>github.com/leonardoleaosantos2009-hub/Sensor-de-Estacionamento-Ultrassonico-com-Arduino</span></li>
+  <li><b>Página de Vendas e Galeria Web:</b> interfaces estilizadas com HTML e CSS.</li>
+ </ul>
+
+ <div class="cv-h">Formação acadêmica</div>
+ <div class="row"><b>Técnico em Desenvolvimento de Sistemas, SENAI</b><i>Fev/2026 – Dez/2027 (em andamento)</i></div>
+
+ <div class="cv-h">Cursos e aperfeiçoamentos</div>
+ <div class="row"><b>Aperfeiçoamento em Machine Learning, SENAI</b><i>Jul/2026 – Dez/2026 (em andamento)</i></div>
+
+ <div class="cv-h">Idiomas</div>
+ <p>Português: nativo &nbsp;·&nbsp; Inglês: básico</p>
+</div>
+
 <footer>© <span id="y"></span> Leonardo Leão dos Santos · Desenvolvedor de Sistemas</footer>
 
 <script>
@@ -261,6 +315,7 @@ const L=document.getElementById('links');
 document.getElementById('menu').onclick=()=>L.classList.toggle('open');
 L.onclick=e=>{if(e.target.tagName==='A')L.classList.remove('open')};
 document.getElementById('y').textContent=new Date().getFullYear();
+let _t=document.title;addEventListener('beforeprint',()=>{_t=document.title;document.title='Curriculo - Leonardo Leao dos Santos'});addEventListener('afterprint',()=>{document.title=_t});
 const roles=['Desenvolvedor de Sistemas','Full-Stack | Foco em Front-End','HTML · CSS · JavaScript · Node · SQL','Estudando Machine Learning'],r=document.getElementById('role');
 let i=0,c=0,d=false;
 (function tick(){const s=roles[i];c+=d?-1:1;r.textContent='> '+s.slice(0,c)+'▌';let w=d?35:70;
